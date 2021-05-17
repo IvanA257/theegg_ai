@@ -1,0 +1,20 @@
+ada-lovelace: Vivió entre 1815 y 1852 y fue la primera persona de la historia en diseñar un algoritmo especificamente
+              diseñado para ser ejecutado por una computadora (la máquina analítica de Babagge). Actualmente se la
+              reconoce como la primera programadora de la historia.
+
+bucles: Instrucción que incluyen la mayoría de lenguajes de programación de alto nivel. El objetivo es hacer
+        al ordenador ejecutar varias instrucciones muy parecidas hasta que se cumpla una condición. Los bucles se
+         utilizan porque escribir todas y cada una de las lineas sería muy trabajoso para el programador y es una tarea
+         facil de automatizar.
+
+         Un ejemplo sería contar del 1 al 5:
+
+         Opción sin bucles:                                       Opción con bucles:
+         k=1                                                      k=1
+         k=k+1                                                    for i in range(4):
+         k=k+1                                                        k = k + 1
+         k=k+1
+         k=k+1
+
+lenguaje-de-programación: Compendio de instrucciones específicas y bien definidas que se pueden traducir a lenguaje
+                          máquina para que las ejecute un ordenador.

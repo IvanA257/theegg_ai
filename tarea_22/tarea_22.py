@@ -1,4 +1,3 @@
-from time import time
 
 
 def get_maximum_milk(n_cows, max_weight, cow_weight_list, cow_milk_production):
@@ -94,7 +93,4 @@ def get_maximum_milk(n_cows, max_weight, cow_weight_list, cow_milk_production):
     print("Total weight: ", weight)
     return sum((i[2] for i in picked_cows))
 
-start_time = time()
 print(get_maximum_milk(10, 2000, (340,355,223,243,130,240,260,155,302,130), (45,50,34,39,29,40,30,52,31,1)))
-end_time = time()
-print("--- %s seconds ---" % (end_time - start_time))
