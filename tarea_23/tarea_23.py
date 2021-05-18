@@ -1,7 +1,13 @@
+import string
+
 class Solitaire:
     def __init__(self, seed=[i for i in range(1,55,1)]):
         self.seed = seed
-        self.deck = self.seed
+        self.deck = self.seed.copy()
+        self.coding_key = []
+
+    def reset(self):
+        self.deck = self.seed.copy()
         self.coding_key = []
 
     def circular_insert(self, element, index):
@@ -87,29 +93,79 @@ class Solitaire:
 
         # Run the four stages of the algorithm
         self.move_joker_A()
-        print(self.deck)
+        # print(self.deck)
         self.move_joker_B()
-        print(self.deck)
+        # print(self.deck)
         self.stage_3()
-        print(self.deck)
+        # print(self.deck)
         self.stage_4()
-        print(self.deck, '\n--------------------------------------------------------------------')
+        # print(self.deck, '\n--------------------------------------------------------------------')
 
 
         first_index = self.deck[0]
 
-        tmp = self.deck[first_index]
+        tmp = -1
+        if first_index < 53:
+            tmp = self.deck[first_index]
 
         # If the picked card is in the upper part of the deck then, we subtract 26 to it, because we need a number
         # between 1 and 26.
-        # if tmp > 26:
-        #     tmp -= 26
-        #     self.coding_key.append(tmp)
-        #
-        # else:
-        self.coding_key.append(tmp)
+            if tmp > 26:
+                tmp -= 26
+
+            self.coding_key.append(tmp)
 
         return tmp
+
+    def get_sequence(self, length):
+
+        while (len(self.coding_key) < length):
+            self.get_letter()
+
+        return self.coding_key
+
+    def encode(self, message):
+        """
+        This function encodes the message.
+        :param message:
+        :param code_sequence:
+        :return:
+        """
+
+
+        code_sequence = self.get_sequence(len(message))
+        print('coding sequence: ', code_sequence)
+
+
+        message_to_int = [string.ascii_lowercase.index(i) for i in message.lower()]
+        print('post number message: ', message_to_int)
+
+        added_message = [(message_to_int[i] + code_sequence[i]) % 26 for i in range(len(message))]
+        print('message addition: ', added_message)
+
+        letters_encoded = [string.ascii_lowercase[i] for i in added_message]
+        print('lettered: ', letters_encoded)
+        # Reset coding_key
+        self.reset()
+
+        return ''.join(letters_encoded)
+
+    def decode(self, message):
+
+        code_sequence = self.get_sequence(len(message))
+        print('decoding sequence: ', code_sequence)
+        message_to_int = [string.ascii_lowercase.index(i) for i in message.lower()]
+        print('numbered decoded message: ', message_to_int)
+        subtracted_message = [(message_to_int[i] - code_sequence[i]) % 26 for i in range(len(message))]
+        print('subtracted decoded: ', subtracted_message)
+        letters_decoded = [string.ascii_lowercase[i] for i in subtracted_message]
+
+        # Reset coding_key
+        self.reset()
+
+        return ''.join(letters_decoded)
+
+
 
 sol = Solitaire()
 # print(sol.deck)
@@ -122,7 +178,18 @@ sol = Solitaire()
 # sol.stage_4()
 # print(sol.deck)
 
-for i in range(10):
-    print(sol.get_letter())
 
-print(sol.coding_key)
+hola = sol.encode('donotusepc')
+print(hola)
+print(sol.decode(hola))
+
+# print(sol.get_sequence(10))
+# sol.reset()
+# print('seed: ', sol.seed)
+# print('deck: ', sol.deck)
+# print(sol.get_sequence(10))
+# sol.reset()
+# print('seed: ', sol.seed)
+# print('deck: ', sol.deck)
+# print(sol.get_sequence(10))
+
