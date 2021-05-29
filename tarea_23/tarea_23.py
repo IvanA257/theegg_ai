@@ -1,4 +1,9 @@
 import string
+"""
+README: The Solitaire encoding algorithm was implemented using object oriented programming. The encoding and decoding
+        methods are called encode and decode respectively. They are the last 2 declared methods. 
+"""
+
 
 class Solitaire:
     def __init__(self, seed=[i for i in range(1,55,1)]):
@@ -76,9 +81,7 @@ class Solitaire:
         last_index = self.deck[-1]  # Cause it begins to count with one instead of zero.
 
         first_deck = self.deck[0:last_index]
-        # print('first deck: ', first_deck)
         second_deck = self.deck[last_index:-1]
-        # print('second deck: ', second_deck)
 
         # Now we switch both decks without changing the last card.
         # If last card in deck is a joker, then do nothing.
@@ -87,19 +90,15 @@ class Solitaire:
 
     def get_letter(self):
         """
-        This function implements the four stages and gets a new letter from the deck.
+        This function implements the four stages described in the web and gets a new letter from the deck.
         :return:
         """
 
         # Run the four stages of the algorithm
         self.move_joker_A()
-        # print(self.deck)
         self.move_joker_B()
-        # print(self.deck)
         self.stage_3()
-        # print(self.deck)
         self.stage_4()
-        # print(self.deck, '\n--------------------------------------------------------------------')
 
 
         first_index = self.deck[0]
@@ -113,11 +112,20 @@ class Solitaire:
             if tmp > 26:
                 tmp -= 26
 
+            # NOTE THAT we only append the picked card if it is smaller than 53. Thus, if it is no joker.
             self.coding_key.append(tmp)
 
         return tmp
 
     def get_sequence(self, length):
+        """
+        This function returns a coding/decoding sequence. I decided to use a while because I don't know how many times
+        a joker card will be obtained (remenber that a joker card cannot be used for the coding/decoding process, one
+        needs to repeat the process and get another card). Therefore, a while structure was my way to obtain a sequence
+        of a certain length.
+        :param length: The length of the coding/decoding sequence we want to obtain.
+        :return: The coding/decoding sequence itself.
+        """
 
         while (len(self.coding_key) < length):
             self.get_letter()
@@ -127,37 +135,48 @@ class Solitaire:
     def encode(self, message):
         """
         This function encodes the message.
-        :param message:
-        :param code_sequence:
-        :return:
+        :param message: Original message we want to encode.
+        :param code_sequence: Number sequence to be used in the encoding.
+        :return: String with the encoded message.
         """
 
-
+        # First, we obtain a coding sequence of the appropriate length.
         code_sequence = self.get_sequence(len(message))
-        print('coding sequence: ', code_sequence)
 
-
+        # Then, we convert the message to integers, each letter gets a number depending on its position in the
+        # alphabet.
         message_to_int = [string.ascii_lowercase.index(i) for i in message.lower()]
-        print('post number message: ', message_to_int)
 
+        # Now, we add up the numbers of the message with the ones of the coding sequence.
         added_message = [(message_to_int[i] + code_sequence[i]) % 26 for i in range(len(message))]
-        print('message addition: ', added_message)
 
+        # Finally, the coded message is converted back to letters.
         letters_encoded = [string.ascii_lowercase[i] for i in added_message]
-        print('lettered: ', letters_encoded)
+
         # Reset coding_key
         self.reset()
 
         return ''.join(letters_encoded)
 
     def decode(self, message):
+        """
+        This function gets a coded message and recovers its original content.
+        :param message: Coded message.
+        :return: Decoded message.
+        """
 
+        # First, we obtain a coding sequence of the appropriate length.
         code_sequence = self.get_sequence(len(message))
-        print('decoding sequence: ', code_sequence)
+
+        # Then, we convert the message to integers, each letter gets a number depending on its position in the
+        # alphabet.
         message_to_int = [string.ascii_lowercase.index(i) for i in message.lower()]
-        print('numbered decoded message: ', message_to_int)
+
+        # Now, we subtract the numbers of the message with the ones of the coding sequence to get the original message
+        # back.
         subtracted_message = [(message_to_int[i] - code_sequence[i]) % 26 for i in range(len(message))]
-        print('subtracted decoded: ', subtracted_message)
+
+        # Finally, the decoded message is converted back to letters.
         letters_decoded = [string.ascii_lowercase[i] for i in subtracted_message]
 
         # Reset coding_key
@@ -168,28 +187,10 @@ class Solitaire:
 
 
 sol = Solitaire()
-# print(sol.deck)
-# sol.move_joker_A()
-# print(sol.deck)
-# sol.move_joker_B()
-# print(sol.deck)
-# sol.stage_3()
-# print(sol.deck)
-# sol.stage_4()
-# print(sol.deck)
 
 
 hola = sol.encode('donotusepc')
 print(hola)
 print(sol.decode(hola))
 
-# print(sol.get_sequence(10))
-# sol.reset()
-# print('seed: ', sol.seed)
-# print('deck: ', sol.deck)
-# print(sol.get_sequence(10))
-# sol.reset()
-# print('seed: ', sol.seed)
-# print('deck: ', sol.deck)
-# print(sol.get_sequence(10))
 
