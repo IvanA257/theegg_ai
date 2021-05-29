@@ -1,0 +1,9 @@
+convertidor analogico digital:
+
+transistores bipolares:
+
+frecuencia de muestreo:
+
+sistema binario:
+
+algebra booleana:
