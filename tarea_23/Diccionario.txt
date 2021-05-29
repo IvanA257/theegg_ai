@@ -1,0 +1,24 @@
+algoritmo de cifrado simetrico: Sistema de cifrado en el que se usa la misma clave  tanto para cifrar como para
+                                descifrar el mensaje. Tiene la ventaja de ser más rápida y la desventaja de ambos
+                                (emisor y receptor) deben conocer la clave. Por lo que se puede dar la situación de que
+                                esa clave tenga que ser comunicada, con riesgo de ser interceptada. De igual manera uno
+                                podría decidir apuntarla, con el riesgo de que el enemigo nos cotillee la clave.
+                                Esto hace a la ciptografía simétrica más rápida pero menos segura.
+
+algoritmo de cifrado asimetrico: Sistema de cifrado en el que se usan dos claves para transmitir un mensaje, la clave
+                                 pública y la clave privada. La pública se usa para encriptar el mensaje y puede ser
+                                 conocida por todos, ya que no sirve para desencriptar. La clave privada a su vez se usa
+                                 para desencriptarlo, por lo que debe ser secreta.
+                                 El funcionamiento de este tipo de algoritmo a grandes rasgos sería:
+
+                                    - Uno le envía la clave pública a su compañero para que cifre el mensaje.
+                                    - El compañero cifra el mensaje usando la clave que le hemos mandado y nos lo envía.
+                                    - Una vez lo tenemos, podemos descifrarlo usando nuestra clave privada a la que solo
+                                      nosotros tenemos acceso.
+
+funciones en programacion: Una función en programación es un trozo de código al que se le pueden dar unas entradas
+                           (conocidas como parámetros) para que ejecute una porción de código basandose en ellas. Una
+                           vez terminada la ejecución la función puede devolver algún tipo de dato como resultado o
+                           simplemente modificar alguna dato fuera de sí misma.
+                           Son útiles especialmente para reutilizar código, ya que nos evitan tener que volver a
+                           escribir el mismo código una y otra vez.
