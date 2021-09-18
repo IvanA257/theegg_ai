@@ -1,6 +1,29 @@
 convertidor analogico digital:
+    Dispositivo electónico que recibe una señal analógica (por ejemplo un voltaje) y la convierte en una señal digital.
+    Haciendo una analogía con medir la altura de un niño, una señal analógica sería el resultado de coger un metro y medir
+    hasta que distancia llega el niño. Una señal digital, en cambio, sería decir cuántos bloquecitos de lego podemos apilar
+    junto al niño sin pasarnos de su altura.
+
+    Queda claro que la señal analógica puede medir cualquier cantidad mientras que la digital solo puede medir múltiplos de lo
+    que mida el lego. Al mismo tiempo, si el niño estuviera poniendose de puntillas cada dos por tres tendríamos una señal
+    analógica que oscilaría mucho. Sin embargo, una digital podría incluso no oscilar nada si lo que se mueve el niño cabe dentro
+    de un solo lego.
 
 transistores bipolares:
+    Un tipo de transistores basados en juntar 3 semiconductores con diferentes dopados.
+        - Semiconductor: Metal con la propiedad especial de conducir o no la electricidad en función de ciertos parámetros del
+                         entorno (como pueden ser la tensión eléctrica, temperatura, etc...). Podemos imaginarlo como una presa,
+                         puede dejar pasar el agua o no, según queramos nosotros.
+        - Dopado: En un contexto de semiconductores, el dopado es un proceso mediante el cual se mezcla el semiconductor
+                  (Silicio por ejemplo) con pequeñas cantidades de otros metales. Esto hace que cambien las propiedades
+                  del semiconductor a la hora de dejar pasar la electricidad.
+
+    A los dopados que introducen electrones en el semiconductor (electrones de más) se les conoce como tipo N y a los que
+    introducen huecos (electrones de menos) se les conoce como tipo P.
+
+    Pues un transistor bipolar consiste a grandes rasgos en juntar dos tipos N con un tipo P en medio o al revés (NPN o PNP).
+    al realizar esta juntura se consigue un dispositivo con tres patas (una conectada a cada tipo de semiconductor) en
+    el que podemos controlar la corriente que pasa entre los extremos con la tensión que pongamos en la pata de en medio.
 
 frecuencia de muestreo:
 
