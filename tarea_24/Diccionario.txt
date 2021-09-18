@@ -1,4 +1,4 @@
-convertidor analogico digital:
+Convertidor analogico digital:
     Dispositivo electónico que recibe una señal analógica (por ejemplo un voltaje) y la convierte en una señal digital.
     Haciendo una analogía con medir la altura de un niño, una señal analógica sería el resultado de coger un metro y medir
     hasta que distancia llega el niño. Una señal digital, en cambio, sería decir cuántos bloquecitos de lego podemos apilar
@@ -9,7 +9,7 @@ convertidor analogico digital:
     analógica que oscilaría mucho. Sin embargo, una digital podría incluso no oscilar nada si lo que se mueve el niño cabe dentro
     de un solo lego.
 
-transistores bipolares:
+Transistores bipolares:
     Un tipo de transistores basados en juntar 3 semiconductores con diferentes dopados.
         - Semiconductor: Metal con la propiedad especial de conducir o no la electricidad en función de ciertos parámetros del
                          entorno (como pueden ser la tensión eléctrica, temperatura, etc...). Podemos imaginarlo como una presa,
@@ -25,8 +25,63 @@ transistores bipolares:
     al realizar esta juntura se consigue un dispositivo con tres patas (una conectada a cada tipo de semiconductor) en
     el que podemos controlar la corriente que pasa entre los extremos con la tensión que pongamos en la pata de en medio.
 
-frecuencia de muestreo:
+Frecuencia de muestreo:
+    En el mundo digital, no solo el espacio está cuantizado (convertido en trocitos), ya no podemos medir sino que tenemos
+    que contar legos; sino que el tiempo también lo está. Los procesadores (o CPUs) tardan un cierto tiempo en hacer cada
+    operación, esto son los famosos Gigahercios que podemos ver cuando compramos un ordenador.
 
-sistema binario:
+    Antes de seguir vamos a ver lo que es un Gigahercio y qué tiene que ver con el tiempo que tarda un procesador en hacer
+    una operación. Empecemos con lo fácil, el prefijo Giga significa mil millones (o 10^9); vamos, que un Gigahercio son
+    mil millones de Hercios.
+    Ahora, ¿qué es un Hercio? Podríamos decir que es la cantidad de operaciones que podemos hacer en un segundo (o la cantidad
+    de oscilaciones, en un contexto más general). Vale, entonces imaginemos que das dos saltos cada segundo y que tardas
+    lo mismo en dar cada salto, ¿Cuánto has tardado en dar cada salto?
+    Medio segundo, ¿verdad? ¿Y si das 5 saltos cada segundo? 0.2 segundos. La operación que estamos haciendo es 1 entre el
+    número de Hercios.
+    Pues lo mismo sirve a la inversa, si yo sé que tardo 0.2 segundos en dar un salto también sé que puedo dar 1/0.2 = 5
+    saltos en un segundo.
 
-algebra booleana:
+    Vale, volvemos con los procesadores, si un procesador tiene 2 GHz, ¿cuántas operaciones hace cada segundo? ¿Cuánto
+    tarda en hacer cada una de esas operaciones? (Hace 2 mil millones de operaciones y tarda medio nanosegundo en cada
+    una.)
+
+    ¿A qué viene todo esto? Pues a que si sabemos que un procesador (que es el corazón de todo dispositivo digital) tarda
+    un cierto tiempo en hacer cada operación y nos imaginamos a ese procesador como un señor apuntando los valores que
+    toma una señal analógica en cada instante del tiempo, entonces rápidamente vamos a deducir que no va a poder apuntar
+    todos los valores que toma la señal en todos y cada uno de los instantes del tiempo.
+
+    Si yo tardo 1 segundo en apuntar un número en una libreta y tú me dices 3 números cada segundo no voy a poder seguirte
+    el ritmo, así que puedo optar por ignorar todos los números que me digas mientras estoy apuntando.
+    Esto es básicamente lo que pasa cuando digitalizamos una señal, que la señal analógica tiene un valor diferente cada
+    instante infinitesimal de tiempo. En cambio, el procesador solo puede apuntar algunos de esos instantes
+
+    Vale, pues esa velocidad a la que el procesador apunta los valores que le dice la señal digital es la frecuencia de
+    muestreo. La frecuencia (cuantas veces hago algo en un segundo) a la que el ordenador muestrea (toma muestras, apunta)
+    la señal.
+
+Sistema binario:
+    Imaginate que tienes un cable conectado a una pila con un interruptor y una bombilla, tú puedes darle al interruptor
+    y encender la bombilla, o darle y apagarla. Teniendo de esta forma un sistema que puede almacenar 1 bit de información,
+    un dato de sí o no, encendida o apagada, corriente o no corriente.
+
+    Esto parece demasiado útil así de primeras, ¿para qué quiero yo saber si la bombilla está encendida o apagada?
+    De acuerdo, ahora imagina que un amigo tuyo se va de vacaciones y te dice que apuntes el número de su caja fuerte.
+    En ese momento no tienes a mano nada más que dos circuitos como el que hemos comentado antes (la bombilla con el interruptor
+    y la pila) y tu amigo te dice que su número es el 3 ¿Cómo lo apuntas?
+
+    Teniendo 2 circuitos puedes almacenar 4 estados diferentes, imaginate que si la bombilla está encendida escribo 1 y si
+    no 0. Los estados posibles serían los siguientes: 00, 01, 10, 11
+
+    Ahora imaginate que, en la urgencia del momento, te inventas la siguiente tabla de equivalencias: 00 -> 0, 01 -> 1,
+    10 -> 2, 11 -> 3
+
+    Entonces podrías encender las 2 bombilla e irte sabiendo que, mientras no se acaben las pilas, esa información estará
+    ahí almacenada hasta que la necesites. Es más, puedes almacenar cualquier número del 0 al 3, en cualquier momento.
+
+    Si llevamos este sistema aún más allá y le añadimos más bombillas podríamos almacenar números incluso más grandes,
+    la cantidad de números que podemos almacenar aumenta exponencialmente con base 2 (2, 4, 8, 16, 32, 64, etc...)
+
+    Pues esta forma de codificar información (en este caso han sido números enteros, pero todo lo que ves a través de un
+    dispositivo digital hoy en día está codificado de esta forma) se la conoce como sistema binario.
+
+Algebra booleana:
