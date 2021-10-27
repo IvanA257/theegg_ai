@@ -85,3 +85,10 @@ Sistema binario:
     dispositivo digital hoy en día está codificado de esta forma) se la conoce como sistema binario.
 
 Algebra booleana:
+    Podríamos decir que el álgebra es la rama de las matemáticas que estudia cómo se combinan entre sí diferentes estructuras
+    matemáticas (números, vectores, etc). Las formas de combinar elementos entre sí son conocidas, son las operaciones que
+    conocemos como suma, resta, multiplicación y demás.
+
+    En esta tesitura, el algebra de Boole es un tipo especial de álgebra que estudia cómo se pueden combinar los números
+    del sistema binario. Las operaciones más básicas y conocidas de este tipo de álgebra serían la AND y la OR, las cuales
+    se parecen a la multiplicación y a la suma "normales", con algunas diferencias significativas.
