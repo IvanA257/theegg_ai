@@ -1,0 +1,42 @@
+arquitectura-cliente-servidor:
+    Es una forma de organizar las aplicaciones para que funcionen de forma distribuida. Pongamos por ejemplo que nosotros tenemos
+    en nuestra empresa un inventario de fruta, sabemos por tanto cuánta cantidad hay de cada fruta y sería sencillo hacer
+    una aplicación que nos lo muestre por pantalla en la propia empresa.
+    Pongamos ahora que esta información queremos que la vea el cliente en su casa, no en la pantalla del ordenador de la empresa.
+    Además, asumimos que el cliente tiene una tablet capaz de ejecutar archivos HTML.
+
+    En esta situación, a nosotros nos interesa crear la aplicación en dos partes, una que se ejecute en la tablet del cliente
+    y le muestre los datos del inventario, y otra que se ejecute en el el ordenador de la empresa y le envíe la información
+    apropiada a nuestro cliente.
+
+    El programa que se ejecute en la tablet del cliente será lo que llamemos el cliente (aquí estoy usando la palabra cliente con
+    dos significados diferentes).
+    Y el programa que ejecutemos en el ordenador de la empresa será lo que llamemos el servidor.
+
+    En resumen, consiste en separar nuestro programa en dos partes diferentes que se ejecutarán en dos ordenadores diferentes.
+    Esto se hace porque cada ordenador tiene acceso a unos datos diferentes y se ubica en contextos distintos.
+    El servidor tiene acceso a los datos del inventario de la fruta, pero no tiene posibilidad de mostrarselo visualmente
+    al comprador (porque están lejos el uno del otro).
+    El cliente en cambio, puede mostrarle la información que sea al comprador, porque lo lleva en el bolsillo. Pero no tiene
+    acceso directo a la información de la fruta.
+
+    Es de estas diferencias de donde surge la necesidad de comunicación.
+
+FTP:
+    Siglas de File Transfer Protocol, es un protocolo (o lenguaje de comunicación entre ordenadores) que sirve para poder
+    enviar información de un ordenador a otro de forma encriptada y con ciertos estándares de seguridad.
+
+servidor-web:
+    Es un ordenador que, al recibir una petición, ejecuta un programa que envía al solicitante la información necesaria
+    para que este pueda visualizar la página web solicitada.
+
+IP:
+    Siglas de Internet Protocol, es el protocolo que se utiliza para hacer llegar paquetes de información desde un ordenador
+    a otro. Identificando tanto al emisor como al receptor únicamente con una dirección IP.
+
+DNS:
+    Siglas de Domain Name System, un servidor DNS es un servidor que tiene una base de datos a la que uno le puede preguntar
+    por un cierto nombre, pongamos www.hola.com, y el servidor le contesta en qué dirección IP está alojada esa página web.
+
+    Sirven para poder acceder a las webs con nombres en lugar de tener que cononcer la dirección IP de la web en todo momento.
+protocolo-TCP/IP:
