@@ -1,0 +1,13 @@
+expresiones-regulares:
+    Cadenas de caracteres que cumplen una serie de condiciones.
+
+procesamiento-del-lenguaje-natural:
+    Toda clase de proceso que se pueda aplicar al lenguaje que usamos a diario para extraer conclusiones del tipo que sea.
+    Un ejemplo sencillo podría ser ver cuántas veces aparece la palabra "pero" en algún periodico a lo largo del año.
+
+scrapping:
+    Extraer toda la información de una página web, posiblemente para luego procesarla de alguna manera.
+
+crawling:
+    Extraer de una página web los links que dirigen a otras, aplicado recursivamente puede llevar a obtener una especie
+    de "mapa" de internet, en el que puedes ver qué páginas apuntan a qué páginas y cuántas veces.
